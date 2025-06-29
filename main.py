@@ -19,7 +19,7 @@ if len(y_train.shape) == 2:
 else:
     y_labels = y_train
 
-for epoch in range(100):
+for epoch in range(200):
     dense1.forward(X_train)
     activation1.forward(dense1.output)
     dense2.forward(activation1.output)
@@ -54,3 +54,8 @@ else:
 
 test_acc = np.mean(test_preds == y_test_labels)
 print(f"Final Test Accuracy: {test_acc:.3f}")
+
+np.save("weights_dense1.npy", dense1.weights)
+np.save("biases_dense1.npy", dense1.biases)
+np.save("weights_dense2.npy", dense2.weights)
+np.save("biases_dense2.npy", dense2.biases)
