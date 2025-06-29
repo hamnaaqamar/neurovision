@@ -1,5 +1,5 @@
 import numpy as np
-from loss import Loss_CategoricalCrossentropy
+from core.loss import Loss_CategoricalCrossentropy
 
 class Layer_Dense:
     def __init__(self, n_inputs, n_neurons):
@@ -30,6 +30,7 @@ class Activation_Softmax:
         exp_values = np.exp(inputs - np.max(inputs, axis=1, keepdims=True))
         probabilities = exp_values / np.sum(exp_values, axis=1,keepdims=True)
         self.output = probabilities
+
 
 class Activation_Softmax_Loss_CategoricalCrossentropy:
     def __init__(self):
