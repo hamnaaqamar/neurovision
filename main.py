@@ -19,7 +19,7 @@ if len(y_train.shape) == 2:
 else:
     y_labels = y_train
 
-for epoch in range(10001):
+for epoch in range(100):
     dense1.forward(X_train)
     activation1.forward(dense1.output)
     dense2.forward(activation1.output)
@@ -28,7 +28,7 @@ for epoch in range(10001):
     predictions = np.argmax(loss_activation.output, axis=1)
     accuracy = np.mean(predictions == y_labels)
 
-    if not epoch % 100:
+    if not epoch % 10:
         print(f'epoch: {epoch}, acc: {accuracy:.3f}, loss: {loss:.3f}, lr: {optimizer.current_learning_rate}')
 
     loss_activation.backward(loss_activation.output, y_train)
