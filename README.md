@@ -35,7 +35,13 @@ It includes:
 - **Optimizer:** Adam with learning rate decay
 
 
+  ![neurovision](https://github.com/user-attachments/assets/20febdb9-7479-4305-8493-e2002d097725)
+
+
+
 ## Training the Model
 
 ```bash
 python main.py
+
+
